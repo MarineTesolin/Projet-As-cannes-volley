@@ -46,7 +46,7 @@ new Chart(document.getElementById("doughnut-chart"), {
 	$('.adherent1').append( sommeadherent);
 	$('.moyenneage').append("Moyenne d'age: "+ moyenne1+' ans');
  
-
+$('#details').modal('show')
 	var monVue = new Vue({
     el:"#content",
     data: {
@@ -77,9 +77,10 @@ var app = new Vue({
   }) ;
   // quand on clique sur un element on maj la fiche personnelle
   $( ".item" ).on( "click", function() {
-    item = database[$(this).attr("id")] ;
+
+    item = database[$(this).attr("id")];
+    $('#details').modal('show');
     app.$forceUpdate();
   });
 }
 
-$('#details').modal('show')
