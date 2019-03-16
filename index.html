@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>As cannes Dragon</title>
+  <meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+    
+    <script src ='database.json'></script>
+</head>
+<header>
+    <div class="headbg">
+    <h4 class="text-white font-weight-bold">AS CANNES VOLLEY</h4>
+    <h5 class="text-white">Club des supporters des Dragons</h5>
+  </div>
+  <div class="logo"> <img id="logonoir" src="images/logo.png"></div>
+  </header>
+
+<h4 class="font-weight-bold listad">LISTE  <span class="text-danger">ADHERENTS</span></h4>
+	<div class='container'>
+		<div class='row'>
+<div class='col-xl-4 order-xl-1 col-12 order-3 col-md-6 order-md-2 '>
+	<div class='adherent1'> Adherents:
+	</div>
+<canvas id="doughnut-chart" width="10" height="10"></canvas>
+<div class='moyenneage'> 
+	</div>
+</div>
+<div class="col-xl-4 order-xl-2 col-12 order-1 col-md-6 order-md-1  anyClass">
+
+      <div id="content" class="">
+      <input type="text" class="classsearch form-control" v-model="search" placeholder="Chercher un nom">
+
+      <table class="table  my-custom-scrollbar my-custom-scrollbar-primary">
+      <thead class="titretabl text-white">
+      <tr>
+      <th class="" scope="col" v-for="titre in titres">{{titre.toUpperCase()}}</th>
+      </tr>
+      </thead>
+      <tbody class="" id='test2'>
+      <tr v-for="(adherent, index) in database" class="item" v-bind:id="index" >
+                        	
+                        	
+      <td>{{adherent.name}}</td>
+      
+      <td>{{adherent.age}} ans</td>
+      </tr>
+      
+      </tbody>
+      </table>
+     </div>
+
+        </div>
+        <div class='col-xl-4 order-xl-3 col-12 order-2 coldroite'>
+        	
+    <!-- TEMPLATE DETAILS -->
+    <div id="details" > 
+
+      <h3>Fiche personnelle</h3>
+      <div class="row"><div class="col-6"><img src="http://placehold.it/32x32"></div><div class="col-6"><p class="font-weight-bold">{{ item.name }}</p>
+       <p class="font-weight-bold">Age : {{ item.age }}</p>
+      <p>Téléphone : {{ item.phone }}</p>
+      <p>Email : {{ item.email }}</p>
+      <p>Adresse : {{ item.address }}</p></div>
+    </div></div>
+    <!-- FIN TEMPLATE DETAILS -->
+       </div>
+   </div>
+</div>
+<footer>
+	<div class='container-fluid'>
+<div class='row justify-content-between'>
+<div class='col-xl-4'>
+<a href='#'>Contact</a>
+</div>
+<div class='col-xl-4'>
+<i class="fab fa-facebook-f fa-2x"></i>
+<i class="fab fa-twitter fa-2x"></i>
+<i class="fab fa-linkedin fa-2x"></i>
+<i class="fab fa-youtube fa-2x"></i>
+	</div>
+
+</div>
+	</div>
+</footer>
+<script src='script.js'></script>
+</body>
+</html>

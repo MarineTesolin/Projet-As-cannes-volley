@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="database.json"></script>
+  <script src="vue.min.js"></script>
+  <script src="script.js"></script>
+  
+  <title></title>
+</head>
+<body>
+
+
+
+<div>
+  <!-- TEMPLATE maintable -->
+  <table id="maintable">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(adherent, index) in database" class="item" v-bind:id="index" >
+        <td>
+          {{adherent.name}}
+        </td>
+        <td>
+          {{adherent.email}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+
+  <div id="coldroite">
+    <!-- TEMPLATE DETAILS -->
+    <div id="details"> 
+      <h3>Fiche personnelle</h3>
+      <p>Nom : {{ item.name }}</p>
+      <p>Sexe : {{ item.gender }}</p>
+      <p>Email : {{ item.email }}</p>
+      <p>Age : {{ item.age }}</p>
+      <p>Téléphone : {{ item.phone }}</p>
+      <p>Société : {{ item.company }}</p>
+      <p>Adresse : {{ item.address }}</p>
+    </div>
+    <!-- FIN TEMPLATE DETAILS -->
+
+    <div id="stats">
+      <h3>Statistiques</h3>
+      <p>Nombre total d'adhérents : {{ stat1 }}</p>
+      <p>Nombre d'hommes : {{ stat2 }}</p>
+      <p>Nombre de femmes : {{ stat3 }}</p>
+      <p>Age moyen : {{ stat4 }}</p>
+    </div>
+  </div>
+</body>
+</html>
+
+
