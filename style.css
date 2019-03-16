@@ -23,6 +23,7 @@
   height: 350px;
   overflow-y: scroll;
 }
+/*---------------TABLEAU----------------------*/
 .listad{
 	margin-left: 10px;
 }
@@ -34,18 +35,24 @@
 	background-color: red;
 
 }
-footer{
-	background-color: #5B5B5B;
-	height:5em;
-}
+
 .classsearch{
 	width: 325px;
 	border-top: solid black;
 	border-left: solid black;
 	border-right: solid black;
 }
-.
+input { font-family: 'FontAwesome'; }
+/*-------------------FICHE PERSO---------------*/
+.imgpersonne{
+	width: 150px;
+}
+/*--------------------FOOTER-------------------*/
+footer{
+	background-color: #5B5B5B;
+	height:5em;
 }	
+/*---------------------MEDIA QUERIES-------------*/
 @media screen and (max-width: 576px) {
  .header1{
 	background: url('images/unknown.png')no-repeat;

@@ -82,3 +82,4 @@ var app = new Vue({
   });
 }
 
+$('#details').modal('show')

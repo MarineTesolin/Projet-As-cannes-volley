@@ -36,7 +36,7 @@
 <div class="col-xl-4 order-xl-2 col-12 order-1 col-md-6 order-md-1  anyClass">
 
       <div id="content" class="">
-      <input type="text" class="classsearch form-control" v-model="search" placeholder="Chercher un nom">
+      <input type="text" value="&#xf002;" class="classsearch form-control" v-model="search" placeholder="Chercher un nom">
 
       <table class="table  my-custom-scrollbar my-custom-scrollbar-primary">
       <thead class="titretabl text-white">
@@ -45,7 +45,7 @@
       </tr>
       </thead>
       <tbody class="" id='test2'>
-      <tr v-for="(adherent, index) in database" class="item" v-bind:id="index" >
+      <tr v-for="(adherent, index) in filtreNom" class="item" v-bind:id="index" >
                         	
                         	
       <td>{{adherent.name}}</td>
@@ -61,10 +61,33 @@
         <div class='col-xl-4 order-xl-3 col-12 order-2 coldroite'>
         	
     <!-- TEMPLATE DETAILS -->
-    <div id="details" > 
+    <div> <div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3>Fiche personnelle</h3>
+      <div class="row"><div class="col-6"><img class="imgpersonne" src="http://placehold.it/32x32"></div><div class="col-6"><p class="font-weight-bold">{{ item.name }}</p>
+       <p class="font-weight-bold">Age : {{ item.age }}</p>
+      <p>Téléphone : {{ item.phone }}</p>
+      <p>Email : {{ item.email }}</p>
+      <p>Adresse : {{ item.address }}</p></div>
+    </div></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
       <h3>Fiche personnelle</h3>
-      <div class="row"><div class="col-6"><img src="http://placehold.it/32x32"></div><div class="col-6"><p class="font-weight-bold">{{ item.name }}</p>
+      <div class="row"><div class="col-6"><img class="imgpersonne" src="http://placehold.it/32x32"></div><div class="col-6"><p class="font-weight-bold">{{ item.name }}</p>
        <p class="font-weight-bold">Age : {{ item.age }}</p>
       <p>Téléphone : {{ item.phone }}</p>
       <p>Email : {{ item.email }}</p>
