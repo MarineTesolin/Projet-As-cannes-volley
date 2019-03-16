@@ -47,11 +47,31 @@ input { font-family: 'FontAwesome'; }
 .imgpersonne{
 	width: 150px;
 }
+#details{
+	display: none;
+}
+#doughtnut-chart{
+	display: none;
+}
 /*--------------------FOOTER-------------------*/
 footer{
 	background-color: #5B5B5B;
 	height:5em;
 }	
+.btfoot{
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background-color: white;
+	line-height: 20px;
+}
+.btn{
+	margin-top: 15px;
+	margin-left: 100px;
+}
+.cont{
+	margin-top: 15px;
+}
 /*---------------------MEDIA QUERIES-------------*/
 @media screen and (max-width: 576px) {
  .header1{

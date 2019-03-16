@@ -30,6 +30,7 @@ new Chart(document.getElementById("doughnut-chart"), {
     }
 });
 
+  
 	
 	var somme = 0;
 	for(m=0; m<database.length; m++)
@@ -45,8 +46,8 @@ new Chart(document.getElementById("doughnut-chart"), {
 
 	$('.adherent1').append( sommeadherent);
 	$('.moyenneage').append("Moyenne d'age: "+ moyenne1+' ans');
- 
-$('#details').modal('show')
+
+
 	var monVue = new Vue({
     el:"#content",
     data: {
