@@ -85,3 +85,6 @@ var app = new Vue({
   });
 }
 
+var friends = new Vue ({
+  
+})

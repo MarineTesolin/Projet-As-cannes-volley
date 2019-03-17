@@ -3,121 +3,119 @@
 <head>
 	<title>As cannes Dragon</title>
   <meta charset="utf-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    
-    <script src ='database.json'></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src ='database.json'></script>
 </head>
-<header>
-    <div class="headbg">
-    <h4 class="text-white font-weight-bold">AS CANNES VOLLEY</h4>
-    <h5 class="text-white">Club des supporters des Dragons</h5>
-  </div>
-  <div class="logo"> <img id="logonoir" src="images/logo.png"></div>
-  </header>
+<header class="">
+  <div class="headbg row">
+    <div class="col-md-8 order-md-2 order-xl-2 col-xl-8 ascannes"><h4 class="text-white font-weight-bold">AS CANNES VOLLEY</h4>
+    <h5 class="text-white">Club des supporters des Dragons</h5></div>
+  
+  <div class="logo col-md-4 col-xl-4 order-md-1 order-xl-1"> <img id="logonoir" src="images/logo.png"></div></div>
+</header>
 
-<div class="row"><div class="col-6"><h4 class="font-weight-bold listad">LISTE  <span class="text-danger">ADHERENTS</span></h4></div>
-<div class="col-6"><img src="images/stats.png"></div></div>
-	
-  <div class='container'>
-		<div class='row'>
-<div class='col-xl-4 order-xl-1 col-12 order-3 col-md-6 order-md-2 '>
-	<div class='adherent1'> Adherents:
-	</div>
-<canvas id="doughnut-chart" width="10" height="10"></canvas>
-<div class='moyenneage'> 
-	</div>
-</div>
-<div class="col-xl-4 order-xl-2 col-12 order-1 col-md-6 order-md-1  anyClass">
+<div class="row"><div class="col-6 offset-1"><h4 class="font-weight-bold listad">LISTE  <span class="text-danger">ADHERENTS</span></h4></div>
+<div class="col-5 statsimg"><img src="images/stats.png" ></div></div>
 
-      <div id="content" class="">
-      <input type="text" value="&#xf002;" class="classsearch form-control" v-model="search" placeholder="Chercher un nom">
-
-      <table class="table  my-custom-scrollbar my-custom-scrollbar-primary">
-      <thead class="titretabl text-white">
-      <tr>
-      <th class="" scope="col" v-for="titre in titres">{{titre.toUpperCase()}}</th>
-      </tr>
-      </thead>
-      <tbody class="" id='test2'>
-      <tr v-for="(adherent) in filtreNom" class="item" v-bind:id="adherent.index" >
-                        	
-                        	
-      <td>{{adherent.name}}</td>
-      
-      <td>{{adherent.age}} ans</td>
-      </tr>
-      
-      </tbody>
-      </table>
+<div class='container'>
+  <div class='row'>
+    <div class='col-xl-4 order-xl-1 col-12 order-3 col-md-6 order-md-2 '>
+     <div class='adherent1'> Adherents: 
      </div>
+     <canvas id="doughnut-chart" width="10" height="10"></canvas>
+     <div class='moyenneage'> 
+     </div>
+   </div>
+   <div class="col-xl-4 order-xl-2 col-12 order-1 col-md-6 order-md-1  anyClass">
 
-        </div>
-        <div class='col-xl-4 order-xl-3 col-12 order-2 coldroite'>
-        	
+    <div id="content" class="">
+      <input type="text"  class="classsearch form-control" v-model="search" placeholder="&#xf002;Chercher un nom">
+
+      <table class="table  my-custom-scrollbar my-custom-scrollbar-danger">
+        <thead class="titretabl text-white">
+          <tr>
+            <th class="" scope="col" v-for="titre in titres">{{titre.toUpperCase()}}</th>
+          </tr>
+        </thead>
+        <tbody class="" id='test2'>
+          <tr v-for="(adherent) in filtreNom" class="item" v-bind:id="adherent.index" >
+
+
+            <td>{{adherent.name}}</td>
+
+            <td>{{adherent.age}} ans</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div class='col-xl-4 order-xl-3 col-12 order-2 coldroite'>
+
     <!-- TEMPLATE DETAILS -->
     <div  > <div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h3>Fiche personnelle</h3>
-      <div class="row"><div class="col-6"><img class="imgpersonne" src="http://placehold.it/32x32"></div><div class="col-6"><p class="font-weight-bold">{{ item.name }}</p>
-       <p class="font-weight-bold">Age : {{ item.age }}</p>
-      <p>Téléphone : {{ item.phone }}</p>
-      <p>Email : {{ item.email }}</p>
-      <p>Adresse : {{ item.address }}</p></div>
-      <div>About:<br> {{item.about}}</div>
-      <div>
-        <table>
-          <thead>
-            <tr> AMIS</tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </div></div>
-      </div>
-      <div class="modal-footer">
-     
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+          <div class="modal-body">
+            <h3 class="font-weight-bold">Fiche <span class="text-danger">personnelle</h3></span>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="row">
+              <div class="col-5">
+                <img class="imgpersonne" src="http://placehold.it/32x32"></div>
+                <div class="col-6"><p class="font-weight-bold">{{ item.name }}</p>
+                 <p class="font-weight-bold">Age : {{ item.age }}</p> 
+                 <p>Téléphone : {{ item.phone }}</p>
+                 <p>Email : {{ item.email }}</p>
+                 <p>Adresse : {{ item.address }}</p></div></div>
+                 <div class='row'>
+                  <div><p class="font-weight-bold">About :</p><br>{{item.about}}</div>
+                  <div>
+                    <p class="font-weight-bold">NOM DE L'ENTREPRISE<br>
+                      <span class="text-danger">{{item.company}}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                 Membre depuis : {{ item.registered.substring(0,10) }}
+               </div>
+             </div>
+           </div>
+         </div>
+
+         <!-- FIN TEMPLATE DETAILS -->
+       </div>
+     </div>
+   </div>
+   <footer>
+     <div class='container-fluid '>
+      <div class='row  '>
+        <div class='col-xl-6'>
+          <a class="text-white cont">Contact</a>
+        </div>
+        <div class='col-xl-6 btn'>
+          <a class="btn-floating btn-lg btfoot" type="button" role="button"><i class="fab fa-facebook"></i></a>
+          <a class="btn-floating btn-lg btfoot" type="button" role="button"><i class="fab fa-twitter"></i></a>
+          <a class="btn-floating btn-lg btfoot" type="button" role="button"><i class="fab fa-linkedin"></i></a>
+          <a class="btn-floating btn-lg btfoot" type="button" role="button"><i class="fab fa-youtube"></i></a>
+
+        </div>
+
       </div>
     </div>
-  </div>
-</div>
-
-    <!-- FIN TEMPLATE DETAILS -->
-       </div>
-   </div>
-</div>
-<footer>
-	<div class='container-fluid'>
-<div class='row justify-content-between'>
-<div class='col-xl-4'>
-<a class="text-white cont">Contact</a>
-</div>
-<div class='col-xl-4 btn'>
-<a class="btn-floating btn-lg btfoot" type="button" role="button"><i class="fab fa-facebook"></i></a>
-<a class="btn-floating btn-lg btfoot" type="button" role="button"><i class="fab fa-twitter"></i></a>
-<a class="btn-floating btn-lg btfoot" type="button" role="button"><i class="fab fa-linkedin"></i></a>
-<a class="btn-floating btn-lg btfoot" type="button" role="button"><i class="fab fa-youtube"></i></a>
-
-	</div>
-
-</div>
-	</div>
-</footer>
-<script src='script.js'></script>
+  </footer>
+  <script src='script.js'></script>
 </body>
 </html>
